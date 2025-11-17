@@ -1,2 +1,0 @@
-from regatta import *
-print(dir)
