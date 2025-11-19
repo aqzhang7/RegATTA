@@ -64,7 +64,7 @@ def flatten_volume(volume):
     plt.imshow(targets)
     
     reference = np.mean(targets[n_slow//2-3:n_slow//2+3,:],axis=0)
-    shifts = [xcorr(t,reference) for t in targets]
+    shifts = [np.xcorr(t,reference) for t in targets]
     shifts = sps.medfilt(shifts,5)
     out = []
     out = [np.roll(b,s,axis=0) for b,s in zip(flattened,shifts)]
